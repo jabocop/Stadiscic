@@ -1,0 +1,10 @@
+C:\dev\hello\www\obj\Debug\vsProj.csprojResolveAssemblyReference.cache
+C:\dev\hello\www\bin\vsProj.dll
+C:\dev\hello\www\bin\vsProj.pdb
+C:\dev\hello\www\obj\Debug\vsProj.dll
+C:\dev\hello\www\obj\Debug\vsProj.pdb
+C:\dev\helloAngular\www\obj\Debug\vsProj.dll
+C:\dev\helloAngular\www\obj\Debug\vsProj.pdb
+C:\dev\helloAngular\www\bin\vsProj.dll
+C:\dev\helloAngular\www\bin\vsProj.pdb
+C:\dev\helloAngular\www\obj\Debug\vsProj.csprojResolveAssemblyReference.cache

@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{82564509-2D65-4A91-B045-0B922329A48D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>vsProj</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58048/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES3</TypeScriptTarget>
+    <TypeScriptIncludeComments>true</TypeScriptIncludeComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptTarget>ES3</TypeScriptTarget>
+    <TypeScriptIncludeComments>false</TypeScriptIncludeComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="configs\karma-e2e.conf.js" />
+    <Content Include="configs\karma.conf.js" />
+    <Content Include="css\bootstrap-glyphicons.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\index.css" />
+    <Content Include="css\styles.css" />
+    <Content Include="css\topcoat-mobile-light.css" />
+    <Content Include="index.html" />
+    <Content Include="partials\Round\playhole.html" />
+    <Content Include="partials\Round\selectPlayers.html" />
+    <TypeScriptCompile Include="js\Controllers\RoundControllers.ts" />
+    <TypeScriptCompile Include="js\Common\AuId.ts" />
+    <Content Include="js\Common\AuId.js">
+      <DependentUpon>AuId.ts</DependentUpon>
+    </Content>
+    <Content Include="js\Controllers\RoundControllers.js">
+      <DependentUpon>RoundControllers.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="js\Factories\RoundFactory.ts" />
+    <Content Include="js\Factories\RoundFactory.js">
+      <DependentUpon>RoundFactory.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="js\test\unit\RoundControllersTests.ts" />
+    <Content Include="js\test\unit\RoundControllersTests.js">
+      <DependentUpon>RoundControllersTests.ts</DependentUpon>
+    </Content>
+    <Content Include="partials\Round\selectCourse.html" />
+    <TypeScriptCompile Include="js\Controllers\PlayerlistController.ts" />
+    <TypeScriptCompile Include="js\Controllers\PlayerController.ts" />
+    <Content Include="js\Controllers\PlayerController.js">
+      <DependentUpon>PlayerController.ts</DependentUpon>
+    </Content>
+    <Content Include="js\Controllers\PlayerlistController.js">
+      <DependentUpon>PlayerlistController.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="js\test\unit\PlayerlistControllerTests.ts" />
+    <TypeScriptCompile Include="js\Models\PlayerModel.ts" />
+    <Content Include="js\Models\PlayerModel.js">
+      <DependentUpon>PlayerModel.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="js\test\unit\PlayerController.ts" />
+    <Content Include="js\test\unit\PlayerController.js">
+      <DependentUpon>PlayerController.ts</DependentUpon>
+    </Content>
+    <Content Include="js\test\unit\PlayerlistControllerTests.js">
+      <DependentUpon>PlayerlistControllerTests.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="js\test\unit\PlayerModelTests.ts" />
+    <Content Include="js\test\unit\PlayerModelTests.js">
+      <DependentUpon>PlayerModelTests.ts</DependentUpon>
+    </Content>
+    <Content Include="partials\player.html" />
+    <Content Include="partials\playerlist.html" />
+    <TypeScriptCompile Include="js\test\unit\ControllerTests.ts" />
+    <TypeScriptCompile Include="js\test\e2e\HomepageTests.ts" />
+    <TypeScriptCompile Include="js\Factories\PageNavFactory.ts" />
+    <Content Include="js\Factories\PageNavFactory.js">
+      <DependentUpon>PageNavFactory.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="js\Factories\StorageFactories.ts" />
+    <Content Include="js\Factories\StorageFactories.js">
+      <DependentUpon>StorageFactories.ts</DependentUpon>
+    </Content>
+    <Content Include="js\test\e2e\HomepageTests.js">
+      <DependentUpon>HomepageTests.ts</DependentUpon>
+    </Content>
+    <Content Include="js\test\e2e\_all_e2etests.d.ts" />
+    <Content Include="js\test\unit\ControllerTests.js">
+      <DependentUpon>ControllerTests.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="js\test\unit\FactoriesTests.ts" />
+    <TypeScriptCompile Include="js\test\unit\CourseControllerTests.ts" />
+    <Content Include="js\test\unit\CourseControllerTests.js">
+      <DependentUpon>CourseControllerTests.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="js\test\unit\CourseListControllerTests.ts" />
+    <Content Include="js\test\unit\CourseListControllerTests.js">
+      <DependentUpon>CourseListControllerTests.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="js\test\unit\CourseModelTests.ts" />
+    <Content Include="js\test\unit\CourseModelTests.js">
+      <DependentUpon>CourseModelTests.ts</DependentUpon>
+    </Content>
+    <Content Include="js\test\unit\FactoriesTests.js">
+      <DependentUpon>FactoriesTests.ts</DependentUpon>
+    </Content>
+    <Content Include="js\test\unit\_all_unittests.d.ts" />
+    <Content Include="js\_all.d.ts" />
+    <TypeScriptCompile Include="js\Controllers\CourseController.ts" />
+    <TypeScriptCompile Include="js\Controllers\BaseController.ts" />
+    <Content Include="js\Controllers\BaseController.js">
+      <DependentUpon>BaseController.ts</DependentUpon>
+    </Content>
+    <Content Include="js\Controllers\CourseController.js">
+      <DependentUpon>CourseController.ts</DependentUpon>
+    </Content>
+    <Content Include="lib\angularMobileNav\mobile-nav.css" />
+    <Content Include="lib\angularMobileNav\mobile-nav.d.ts" />
+    <Content Include="lib\angularMobileNav\mobile-nav.js" />
+    <Content Include="lib\Angular\angular-mocks.d.ts" />
+    <Content Include="lib\Angular\angular-resource.min.js" />
+    <Content Include="lib\Angular\angular-scenario-extension.d.ts" />
+    <Content Include="lib\Angular\angular-scenario.d.ts" />
+    <Content Include="partials\about.html" />
+    <Content Include="partials\course.html" />
+    <Content Include="partials\courselist.html" />
+    <Content Include="partials\home.html" />
+    <TypeScriptCompile Include="js\Application.ts" />
+    <Content Include="js\Application.js">
+      <DependentUpon>Application.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="js\Controllers\CourseListController.ts" />
+    <Content Include="js\Controllers\CourseListController.js">
+      <DependentUpon>CourseListController.ts</DependentUpon>
+    </Content>
+    <Content Include="lib\lawnchair\lawnchair-0.6.1.min.js" />
+    <Content Include="lib\lawnchair\lawnchair-adapter-webkit-sqlite-0.6.1.js" />
+    <Content Include="lib\lawnchair\lawnchair.d.ts" />
+    <Content Include="lib\Angular\angular.d.ts" />
+    <Content Include="lib\Angular\angular.min.js" />
+    <Content Include="lib\jquery\jquery.d.ts" />
+    <Content Include="lib\jquery\jquery-1.9.1.min.js" />
+    <Content Include="js\Models\CourseModel.js">
+      <DependentUpon>CourseModel.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="js\Models\CourseModel.ts" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" />
+</Project>

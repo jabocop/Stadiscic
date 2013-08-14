@@ -1,0 +1,28 @@
+﻿<!--Courses page -->
+<div class="container">
+    Hole: {{activeHole.holeNo}}
+    Par: {{activeHole.par}}
+    <div class="list-group-flush"></div>
+    <div class="list-group">
+        <div class="list-group-item " ng-repeat="result in holeResults">
+                <h4 class="list-group-item-heading">{{result.player.name}} - {{result.score}}</h4>
+                <p class="list-group-item-text">32(+1)</p>
+               <span type="button" class="btn btn-primary btn-mini glyphicon glyphicon-minus-sign" ng-click="onDecreaseScore(result)"></span>
+                <span type="button" class="btn btn-primary btn-mini glyphicon glyphicon-plus-sign" ng-click="onIncreaseScore(result)"> </span>
+                
+                     
+                
+        </div>
+    </div>
+
+
+
+
+
+ <div class="form-group">
+            <div class="">
+                <button type="submit" class="btn " ng-click="onBack()">Back</button>
+                <button type="submit" class="btn " ng-click="onNext()">Next</button>
+            </div>
+        </div>
+</div>

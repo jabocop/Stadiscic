@@ -1,0 +1,17 @@
+﻿<!--Courses page -->
+<div class="container">
+    <div class="list-group">
+        <a href="" class="list-group-item " ng-repeat="course in courses" ng-click="editCourse(course)">
+            
+            
+                <h4 class="list-group-item-heading">{{course.name}}</h4>
+                
+            
+            <p class="list-group-item-text">Holes: {{course.holes.length}}</p>
+        </a>
+        
+    </div>
+                 
+        
+    <a href="" ng-click="addCourse()" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> Add course</a>
+</div>

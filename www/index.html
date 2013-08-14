@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="stadiscics">
+<head>
+  
+    
+  <title>Stadiscisc</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">		
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="lib/angularMobileNav/mobile-nav.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-glyphicons.css">
+    
+  <script src="lib/jquery/jquery-1.9.1.min.js"></script>
+  <script src="lib/Angular/angular.min.js"></script>
+  <script src="lib/Angular/angular-resource.min.js"></script>
+  <script src="lib/lawnchair/lawnchair-0.6.1.min.js"></script>
+  <script src="lib/lawnchair/lawnchair-adapter-webkit-sqlite-0.6.1.js"></script>
+  <script src="lib/angularMobileNav/mobile-nav.js"></script>
+  <script src="js/Models/CourseModel.js"></script>
+  <script src="js/Models/PlayerModel.js"></script>
+  <script src="js/Factories/PageNavFactory.js"></script>
+  <script src="js/Factories/StorageFactories.js"></script>
+  <script src="js/Factories/RoundFactory.js"></script>
+  
+  <script src="js/Controllers/CourseListController.js"></script>
+  <script src="js/Controllers/PlayerlistController.js"></script>
+  <script src="js/Controllers/CourseController.js"></script>
+  <script src="js/Controllers/PlayerController.js"></script>
+  <script src="js/Controllers/RoundControllers.js"></script>
+
+  <script src="js/Common/AuId.js"></script>
+  
+    <script src="js/Controllers/BaseController.js"></script>
+  <script src="js/Application.js"></script>
+  
+  
+    
+ 
+
+</head>
+<body>
+    <!-- This will make the BaseController availible in all views -->
+    <div ng-controller='BaseController'>    
+        <div class="navbar  navbar-static-top">
+            <div class="container ">
+               <a id="app_title" class='navbar-brand' ng-bind="title" ng-click="changePage('/')">Dummy</a>
+             </div>
+        </div>
+       
+        <mobile-view></mobile-view>
+            
+    </div>
+
+    </body>
+</html>

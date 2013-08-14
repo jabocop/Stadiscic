@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Stadiscisc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">		
+  <link href="lib/jquerymobile/jquery.mobile-1.3.1.css" rel="stylesheet" />
+  
+  <script src="lib/jquery/jquery-1.9.1.min.js"></script>
+  <script src="lib/jquerymobile/jquery.mobile-1.3.1.js"></script>
+  <script src="lib/Angular/angular.min.js"></script>
+  <script src="lib/Angular/jquery-mobile-angular-adapter.min.js"></script>
+  <script src="lib/lawnchair/lawnchair-0.6.1.min.js"></script>
+  <script src="lib/lawnchair/lawnchair-adapter-webkit-sqlite-0.6.1.js"></script>
+  <script src="js/ApplicationController.js"></script>
+  <script src="js/CourseModel.js"></script>
+   
+</head>
+<body>
+    <div ng-controller="ApplicationController">    
+    <div data-role="page" id="Home">
+            <div data-role="header">
+                <h1>StaDiscisc</h1>
+            </div>
+            <div data-role="content">
+                <a data-role="button" href="#Courses">Courses</a>
+                <a data-role="button" href="#About">About</a>
+            </div>
+        </div>
+        <!--About page -->
+        <div data-role="page" id="About" data-title="About">
+            <div data-role="header">
+                <h1>About</h1>
+                <a data-role="button" href="#Home" data-icon="home" data-iconpos="notext">Home</a>
+            </div>
+            <div data-role="content">
+                <span>This is the about dialog</span>
+            </div>
+        </div>
+        
+        <!--Courses page -->
+        <div data-role="page" id="Courses" data-title="Courses">
+            <div data-role="header">
+                <h1>Courses</h1>
+                <a data-role="button" href="#Home" data-icon="home" data-iconpos="notext">Button</a>
+            </div>
+            <div data-role="content">
+                <ul id="courseList"  data-role="listview" data-inset="true" data-split-icon="delete">
+                    <li ng-repeat="course in courses">
+                        <a href="#" ng-click="editCourse(course)">{{course.name}}</a>
+                        <a href="#" ng-click="deleteCourse(course)">Delete</a>
+                        
+                    </li>
+                </ul>
+                <a data-role="button" href="#" ng-click="addCourse()" data-icon="plus" data-inline="true">Add course</a>
+            </div>
+        </div>
+        <div data-role="dialog" id="EditCourse">
+            <div data-role="header">
+                <h1>{{activeCourse.caption}}</h1>
+               
+                
+            </div>
+            <div data-role="content">
+                <form action="" method="POST">
+                    <div data-role="fieldcontain">
+                        <label for="name">Name:</label>
+                        <input type="text" ng-model="activeCourse.name" id="name"/>
+                    </div>
+                    <div data-role="fieldcontain">
+	                     
+                             <label for="holeCount">Holes:</label>
+                             <input type="range" name="holeCount" id="holeCount" ng-model="activeCourse.holeCount" ng-change="activeCourse.holeCountChange()" min="1" max="36" />                     
+                          
+                    </div>
+                    <div holes>
+                        <ul id="Ul1"  data-role="listview" data-inset="true" data-split-icon="delete">
+                            <li ng-repeat="hole in activeCourse.holes">
+                               <div data-role="fieldcontain">
+	                     
+                                   <label for="holepar">Hole {{hole.holeNo}}:</label>
+                                   <input type="range" name="holepar" id="rangePar" ng-model="hole.par"  min="1" max="7" />                     
+                          
+                                </div>
+                        
+                            </li>
+                         </ul>
+                    </div>                   
+                    <a data-role="button" id="Cancel" ng-click="cancelCourseEdit()" href="#" data-inline="true">Cancel</a>
+                    <a data-role="button" class="ui-btn-active" id="Ok" href="#" ng-click="saveCourse(activeCourse)" data-inline="true">Ok</a>
+                </form>
+            </div>
+        </div>
+        </div>
+
+    </body>
+</html>
